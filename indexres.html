@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResBuild</title>
+    <link rel="stylesheet" href="styleres.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <h1>Resume Builder</h1>
+    <form id="resume-form">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="Type your name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="email" required>
+
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" placeholder="Telephone" required>
+
+        <label for="skills">Skills (comma separated):</label>
+        <input type="text" id="skills"placeholder="What Can You Do" required>
+
+        <label for="experience">Work Experience</label>
+        <textarea id="experience" placeholder="What Have You Done" required></textarea>
+
+        <label for="education">Education</label>
+        <textarea id="education" placeholder="Education" required></textarea>
+
+        <lebel for="date">Date</lebel>
+        <input type="date" id="date" placeholder="Today`s date" required>
+
+        <button type="button" onclick="generateResume()">Generate Resume</button>
+    </form>
+
+    <div id="resume-output"></div>
+
+    <script src="scriptres.js"></script>
+    <button type="button" onclick="downloadPDF()">Download as PDF</button>
+
+    <footer class="footer">
+
+        <div class="container">
+          <p> Created by
+            <span class="animate-word">Scybud</span> </p>
+        </div>
+      </footer>
+  
+</body>
+</html>

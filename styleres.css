@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: left;
+    background-color: gold;
+    padding: 20px;
+}
+
+form {
+    background: royalblue;
+    padding: 20px;
+    max-width: 400px;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(188, 222, 12);
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #56bde1;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #ffffffce;
+    color: #de2121;
+    padding: 10px 15px;
+    border: navajowhite;
+    cursor: pointer;
+    border-radius: 10px;
+    
+}
+
+button:hover {
+    background-color: #000000;
+}
+
+#resume-output {
+    background: #6166f0;
+    padding: 20px;
+    max-width: 500px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+h2 {
+    color: #000000;
+}
+
+footer {
+    background-color: rgb(115, 228, 222);
+    color: rgb(255, 11, 11);
+    text-align: center;
+    border-radius: 50px;
+    
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+@keyframes colorChange {
+    0% { color: black;}
+    10% { color: red;}
+    20% { color: gold;}
+    30% { color: peru;}
+    40% { color: pink;}
+    50% { color: rgb(152, 37, 56);}
+    60% { color: silver;}
+    70% { color: yellow;}
+    80% { color: gray;}
+    90% { color: orange;}
+    100% { color: green;}
+}
+.animate-word {
+    animation: colorChange 3s infinite;
+    font-weight: bold;
+}
+.container {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+}

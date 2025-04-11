@@ -1,38 +1,7 @@
-function generateResume() {
-    let name = document.getElementById("name").value;
-    let email = document.getElementById("email").value;
-    let phone = document.getElementById("phone").value;
-    let skills = document.getElementById("skills").value;
-    let experience = document.getElementById("experience").value;
-    let education = document.getElementById("education").value;
-    let date = document.getElementById("date").value;
-   
-
-    let resumeHTML = `
-        <h2>${name}</h2>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phone}</p>
-        <h3>Skills</h3>
-        <p>${skills}</p>
-        <h3>Work Experience</h3>
-        <p>${experience}</p>
-        <h3>Education</h3>
-        <p>${education}</p>
-        <h3>Date</h3>
-        <p>${date}</p>
-       
-    `;
-
-    let resumeOutput = document.getElementById("resume-output");
-    resumeOutput.innerHTML = resumeHTML;
-    resumeOutput.style.display = "block";
-}
-
 function downloadPDF() {
     const { jsPDF } = window.jspdf;
     let doc = new jsPDF();
 
-    // Get resume content
     let name = document.getElementById("name").value;
     let email = document.getElementById("email").value;
     let phone = document.getElementById("phone").value;
@@ -41,27 +10,31 @@ function downloadPDF() {
     let education = document.getElementById("education").value;
     let date = document.getElementById("date").value;
 
-    // Format the content for PDF
+    // Properly formatted multi-line string
     let resumeContent = `
-        Name: ${name}
-        Email: ${email}
-        Phone: ${phone}
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
 
-        Skills:
-        ${skills}
+Skills:
+${skills}
 
-        Work Experience:
-        ${experience}
+Work Experience:
+${experience}
 
-        Education:
-        ${education}
-        Date:
-        ${date}
+Education:
+${education}
+
+Date: ${date}
     `;
 
-    // Add content to PDF
-    doc.text(resumeContent, 10, 10);
+    // Split the content into lines and add them one by one
+    const lines = resumeContent.trim().split('\n');
+    let y = 10;
+    lines.forEach(line => {
+        doc.text(line.trim(), 10, y);
+        y += 10; // space between lines
+    });
 
-    // Save PDF
     doc.save("Resume.pdf");
 }

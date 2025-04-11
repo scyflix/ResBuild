@@ -26,6 +26,12 @@ ${education}
 Date: ${date}
     `;
 
+    if (!name || !email || !phone) {
+  alert("Please fill out all fields");
+  return;
+}
+
+
     // Split the content into lines and add them one by one
     const lines = resumeContent.trim().split('\n');
     let y = 10;

@@ -1,20 +1,3 @@
-function downloadPDF() {
-    const { jsPDF } = window.jspdf;
-    const doc = new jsPDF();
-
-    // Target the resume output HTML
-    let resumeElement = document.getElementById("resume-output");
-
-    doc.html(resumeElement, {
-        callback: function (doc) {
-            doc.save("Resume.pdf");
-        },
-        x: 10,
-        y: 10,
-        html2canvas: { scale: 0.5 }
-    });
-}
-
 function generateResume() {
 
     let name = document.getElementById("name").value;
@@ -50,6 +33,24 @@ Date: ${date}
         doc.text(line.trim(), 10, y);
         y += 10; // space between lines
     });
+
+
+    function downloadPDF() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    // Target the resume output HTML
+    let resumeElement = document.getElementById("resume-output");
+
+    doc.html(resumeElement, {
+        callback: function (doc) {
+            doc.save("Resume.pdf");
+        },
+        x: 10,
+        y: 10,
+        html2canvas: { scale: 0.5 }
+    });
+}
 
     doc.save("Resume.pdf");
 }

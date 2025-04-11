@@ -39,7 +39,7 @@ function downloadPDF() {
     let skills = document.getElementById("skills").value;
     let experience = document.getElementById("experience").value;
     let education = document.getElementById("education").value;
-    let date = diocument.getElementById("date").value;
+    let date = document.getElementById("date").value;
 
     // Format the content for PDF
     let resumeContent = `

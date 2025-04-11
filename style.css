@@ -12,6 +12,7 @@ form {
     margin: auto;
     border-radius: 10px;
     box-shadow: 0 0 10px rgb(188, 222, 12);
+    overflow: hidden;
 }
 
 input, textarea {

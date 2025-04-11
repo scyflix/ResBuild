@@ -1,6 +1,20 @@
 function downloadPDF() {
     const { jsPDF } = window.jspdf;
-    let doc = new jsPDF();
+    const doc = new jsPDF();
+
+    // Target the resume output HTML
+    let resumeElement = document.getElementById("resume-output");
+
+    doc.html(resumeElement, {
+        callback: function (doc) {
+            doc.save("Resume.pdf");
+        },
+        x: 10,
+        y: 10,
+        html2canvas: { scale: 0.5 }
+    });
+}
+
 
     let name = document.getElementById("name").value;
     let email = document.getElementById("email").value;

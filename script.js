@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const email = document.getElementById("email").value;
     const phone = document.getElementById("phone").value;
     const skills = document.getElementById("skills").value;
-    const experience = document.getElementById("experience").value;
+    const experiencedate = document.getElementById("experiencedate").value; const experience = document.getElementById("experience").value;
     const education = document.getElementById("education").value;
     const date = document.getElementById("date").value;
 
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <h3>Skills</h3>
       <p>${skills}</p>
       <h3>Work Experience</h3>
-      <p>${experience}</p>
+      <p>${experiencedate}</p> <p>${experience}</p>
       <h3>Education</h3>
       <p>${education}</p>
       <h3>Date</h3>
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const email = document.getElementById("email").value;
     const phone = document.getElementById("phone").value;
     const skills = document.getElementById("skills").value;
-    const experience = document.getElementById("experience").value;
+    const experiencedate = document.getElementById("experiencedate").value; const experience = document.getElementById("experience").value;
     const education = document.getElementById("education").value;
     const date = document.getElementById("date").value;
 
@@ -48,7 +48,7 @@ Skills:
 ${skills}
 
 Work Experience:
-${experience}
+${experiencedate} ${experience}
 
 Education:
 ${education}

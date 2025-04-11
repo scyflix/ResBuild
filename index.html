@@ -36,13 +36,21 @@
 
     <div id="resume-output"></div>
     <script>
-        const textarea = document.getElementById("education");
+        const educationTextArea = document.getElementById("education");
         const input = document.getElementById("skills");
-        const textarea = document.getElementById("experience");
+        const experienceTextArea = document.getElementById("experience");
     
-        textarea.addEventListener("input", () => {
-          textarea.style.height = "auto"; // Reset height
-          textarea.style.height = textarea.scrollHeight + "px"; // Set new height
+        educationTextArea.addEventListener("input", () => {
+          educationTextArea.style.height = "auto"; // Reset height
+          educationTextArea.style.height = educationTextArea.scrollHeight + "px"; // Set new height
+        });
+        experienceTextArea.addEventListener("input", () => {
+            experienceTextArea.style.height = "auto"; //Reset height
+            experienceTextArea.style.height = experienceTextArea.scrollHeight + "px"; //Set new height
+        });
+        input.addEventListener("input", () => {
+            input.style.height = "auto"; //Reset height
+            input.style.height = input.scrollHeight + "px"; //Set new height
         });
       </script>
 

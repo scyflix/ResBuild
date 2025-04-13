@@ -72,3 +72,71 @@ Date: ${date}
     });
   });
 });
+
+
+
+
+function downloadPDF() {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const phone = document.getElementById("phone").value;
+  const skills = document.getElementById("skills").value;
+  const experience = document.getElementById("experience").value;
+  const education = document.getElementById("education").value;
+  const date = document.getElementById("date").value;
+
+  let y = 10; // vertical spacing tracker
+
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(18);
+  doc.text(name, 10, y);
+  y += 10;
+
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(12);
+  doc.text(`Email: ${email}`, 10, y);
+  y += 7;
+  doc.text(`Phone: ${phone}`, 10, y);
+  y += 10;
+
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(14);
+  doc.text("Skills", 10, y);
+  y += 7;
+
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(12);
+  doc.text(skills, 10, y);
+  y += 10;
+
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(14);
+  doc.text("Work Experience", 10, y);
+  y += 7;
+
+  doc.setFont("helvetica", "normal");
+  const splitExp = doc.splitTextToSize(experience, 180); // wrap long text
+  doc.text(splitExp, 10, y);
+  y += splitExp.length * 6 + 4;
+
+  doc.setFont("helvetica", "bold");
+  doc.text("Education", 10, y);
+  y += 7;
+
+  doc.setFont("helvetica", "normal");
+  const splitEdu = doc.splitTextToSize(education, 180);
+  doc.text(splitEdu, 10, y);
+  y += splitEdu.length * 6 + 4;
+
+  doc.setFont("helvetica", "bold");
+  doc.text("Date", 10, y);
+  y += 7;
+
+  doc.setFont("helvetica", "normal");
+  doc.text(date, 10, y);
+
+  doc.save("Resume.pdf");
+}

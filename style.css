@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     text-align: left;
-    background-color: gold;
+    background-color: #47B5FF;
     padding: 20px;
 }
 header{
@@ -12,7 +12,7 @@ header{
 }
 
 form {
-    background: royalblue;
+    background: #DFF6FF;
     padding: 20px;
     max-width: 400px;
     margin: auto;

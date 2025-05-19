@@ -39,6 +39,11 @@ button {
     
 }
 
+#downloadButton{
+    text-align:center;
+    item-align:center;
+}
+
 button:hover {
     background-color: #000000;
 }

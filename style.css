@@ -88,8 +88,4 @@ footer {
     animation: colorChange 3s infinite;
     font-weight: bold;
 }
-.container {
-    max-width: 90%;
-    margin: 0 auto;
-    padding: 20px;
-}
+

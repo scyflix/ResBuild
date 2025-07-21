@@ -73,7 +73,7 @@ footer {
     margin: 20px auto;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    line-height: normal;
+    line-height: 30px;
 }
 @keyframes colorChange {
     0% { color: black;}

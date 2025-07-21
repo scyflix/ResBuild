@@ -68,25 +68,17 @@ footer {
     color: rgb(255, 11, 11);
     text-align: center;
     border-radius: 50px;
-    
-    max-width: 1200px;
+    max-width: 100px;
     margin: 20px auto;
     padding: 20px;
-    
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 @keyframes colorChange {
     0% { color: black;}
-    10% { color: red;}
-    20% { color: gold;}
-    30% { color: peru;}
-    40% { color: pink;}
-    50% { color: rgb(152, 37, 56);}
-    60% { color: silver;}
-    70% { color: yellow;}
-    80% { color: gray;}
-    90% { color: orange;}
-    100% { color: green;}
+    25% { color: red;}
+    50% { color: gold;}
+    75% { color: peru;}
+    100% { color: pink;}
 }
 .animate-word {
     animation: colorChange 3s infinite;

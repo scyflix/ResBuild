@@ -1,74 +1,76 @@
-document.addEventListener("DOMContentLoaded", () => {
-  function generateResume() {
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const phone = document.getElementById("phone").value;
-    const skills = document.getElementById("skills").value;
-    const experience = document.getElementById("experience").value;
-    const education = document.getElementById("education").value;
-    const date = document.getElementById("date").value;
+function generateResume() {
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let phone = document.getElementById("phone").value;
+    let skills = Array.from(document.querySelectorAll(".skill"))
+  .map(input => input.value)
+  .filter(v => v.trim() !== "");
+    let experience = document.getElementById("experience").value;
+    let education = document.getElementById("education").value;
+    let date = document.getElementById("date").value;
+   
 
-    const resumeHTML = `
-      <h2>${name}</h2>
-      <p><strong>Email:</strong> ${email}</p>
-      <p><strong>Phone:</strong> ${phone}</p>
-      <h3>Skills</h3>
-      <p>${skills}</p>
-      <h3>Work Experience</h3>
-      <p>${experience}</p>
-      <h3>Education</h3>
-      <p>${education}</p>
-      <h3>Date</h3>
-      <p>${date}</p>
+    let resumeHTML = `
+        <h2>${name}</h2>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone:</strong> ${phone}</p>
+        <h3>Skills</h3>
+<ul>${skills.map(skill => `<li>${skill}</li>`).join("")}</ul>
+        <h3>Work Experience</h3>
+        <p>${experience}</p>
+        <h3>Education</h3>
+        <p>${education}</p>
+        <h3>Date</h3>
+        <p>${date}</p>
     `;
 
-    const resumeOutput = document.getElementById("resume-output");
+    let resumeOutput = document.getElementById("resume-output");
     resumeOutput.innerHTML = resumeHTML;
     resumeOutput.style.display = "block";
-  }
+}
+function addSkill() {
+    const container = document.getElementById("skills-container");
+    let input = document.createElement("input");
+    input.type = "text";
+    input.className = "skill";
+    input.placeholder = "Enter a skill";
+    container.appendChild(input);
+}
 
-  function downloadPDF() {
+function downloadPDF() {
     const { jsPDF } = window.jspdf;
-    const doc = new jsPDF();
+    let doc = new jsPDF();
 
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const phone = document.getElementById("phone").value;
-    const skills = document.getElementById("skills").value;
-    const experience = document.getElementById("experience").value;
-    const education = document.getElementById("education").value;
-    const date = document.getElementById("date").value;
+    // Get resume content
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let phone = document.getElementById("phone").value;
+    let skills = document.getElementById("skills-container").value;
+    let experience = document.getElementById("experience").value;
+    let education = document.getElementById("education").value;
+    let date = document.getElementById("date").value;
 
-    const resumeContent = `
-Name: ${name}
-Email: ${email}
-Phone: ${phone}
+    // Format the content for PDF
+    let resumeContent = `
+        Name: ${name}
+        Email: ${email}
+        Phone: ${phone}
 
-Skills:
-${skills}
+        Skills:
+        ${skills}
 
-Work Experience:
- ${experience}
+        Work Experience:
+        ${experience}
 
-Education:
-${education}
-
-Date: ${date}
+        Education:
+        ${education}
+        Date:
+        ${date}
     `;
 
+    // Add content to PDF
     doc.text(resumeContent, 10, 10);
+
+    // Save PDF
     doc.save("Resume.pdf");
-  }
-
-  // Attach functions to buttons
-  window.generateResume = generateResume;
-  window.downloadPDF = downloadPDF;
-
-  // Auto-resize textareas
-  document.querySelectorAll("textarea").forEach(textarea => {
-    textarea.addEventListener("input", () => {
-      textarea.style.height = "auto";
-      textarea.style.height = textarea.scrollHeight + "px";
-    });
-  });
-});
+}

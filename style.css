@@ -1,42 +1,63 @@
 body {
     font-family: Arial, sans-serif;
     text-align: left;
-    background-color: #47B5FF;
+    background-color: black;
     padding: 20px;
+    color: white;
+    font-size: large;
 }
 header{
-    background-color: aliceblue;
+    background-color: rgb(2, 2, 34);
     text-align: center;
     border-radius: 2px;
     padding: 5px;
+    color: white;
+    border: #DFF6FF solid 2px ;
+    box-shadow: 0 0 20px rgb(255, 255, 255);
 }
-
+a {
+    color: beige;
+    justify-content: space-evenly;
+}
 form {
-    background: #DFF6FF;
+    background-color: rgb(27, 27, 27);
     padding: 20px;
     max-width: 400px;
-    margin: auto;
+    margin: 10px auto;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgb(188, 222, 12);
+    box-shadow: 0 0 10px rgba(5, 3, 146, 0.927);
     overflow: hidden;
 }
 
 input, textarea {
+    width: 97%;
+    padding: 8px;
+    margin: 10px 5px;
+    border: 2px solid #56bde1;
+    border-radius: 5px;
+}
+input:focus {
+     width: 98%;
+    padding: 8px;
+    margin: 10px 2px;
+    border: 4px solid red;
+    border-radius: 2px;
+}
+ textarea:hover {
     width: 100%;
     padding: 8px;
-    margin: 10px 0;
+    margin: 10px 2px;
     border: 1px solid #56bde1;
     border-radius: 5px;
 }
 
 button {
     background-color: #ffffffce;
-    color: #de2121;
+    color: black;
     padding: 10px 15px;
-    border: navajowhite;
     cursor: pointer;
     border-radius: 10px;
-    
+    font-size: larger;
 }
 
 #downloadButton{
@@ -44,7 +65,9 @@ button {
 }
 
 button:hover {
-    background-color: #000000;
+    background-color: gray;
+    box-shadow: 0 0 10px rgb(255, 255, 255);
+    color: white;
 }
 
 #resume-output {
@@ -56,6 +79,7 @@ button:hover {
   background: white;
   padding: 20px;
   display: none;
+  color: black;
 }
 
 
@@ -68,14 +92,14 @@ footer {
     color: rgb(255, 11, 11);
     text-align: center;
     border-radius: 50px;
-    width: 0 auto;
-    height: 0 auto;
-    margin: 20px auto;
+    max-width: 500px;
+    height: 5vh;
+    margin: 10px auto 1px auto;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 footer p {    
-    line-height: 30px;
+    line-height: 2px;
          }
 @keyframes colorChange {
     0% { color: black;}
@@ -87,9 +111,4 @@ footer p {
 .animate-word {
     animation: colorChange 3s infinite;
     font-weight: bold;
-}
-.container {
-    max-width: 90%;
-    margin: 0 auto;
-    padding: 20px;
 }
